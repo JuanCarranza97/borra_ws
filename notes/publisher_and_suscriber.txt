@@ -28,3 +28,9 @@ msg type: sdt_msgs/String
 borra_ws/src/beginner_tutorials/src/scripts/talker.py
 #Python Listener
 borra_ws/src/beginner_tutorials/src/scripts/listener.py
+
+#C++ Talker and listener
+- Adds executable in CMakeLists.txt
+- It is needed to compile running catkin_make in the workspace
+- Run Talker: rosrun beginner_tutorials talker_ros_node
+- Run Listener: rosrun  beginner_tutorials listener_ros_node
