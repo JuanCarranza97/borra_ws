@@ -210,3 +210,9 @@ target_link_libraries(talker_node ${catkin_LIBRARIES})
 
 add_executable(listener_node src/listener.cpp)
 target_link_libraries(listener_node ${catkin_LIBRARIES})
+
+add_executable(pose_listener_node src/show_position.cpp)
+target_link_libraries(pose_listener_node ${catkin_LIBRARIES})
+
+add_executable(move_turtle src/move_turtle.cpp)
+target_link_libraries(move_turtle ${catkin_LIBRARIES})
