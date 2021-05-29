@@ -1,0 +1,22 @@
+Create package
+
+#Go to src folder
+
+cd workspace/src
+catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+
+#catkin make
+cd ../
+catking_make
+
+#Show dependencies
+rospack depends1 beginner_tutorials 
+
+#Go to one package
+roscd beginner_tutorials
+
+#Show indirect dependencies
+rospack depends1 rospy
+
+#Show all dependencies
+rospack depends beginner_tutorials

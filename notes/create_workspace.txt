@@ -1,0 +1,13 @@
+Create a workspace
+http://wiki.ros.org/catkin/Tutorials/create_a_workspace
+
+source /opt/ros/noetic/setup.bash
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+
+#You need to add your ws to the source
+source devel/setup.bash
+
+#Show ROS_PACKAGE_PATH
+echo $ROS_PACKAGE_PATH

@@ -1,0 +1,40 @@
+#Go to ros package <package_name>
+roscd <package_name>
+
+#If failed because python not found
+jcarranz@DESKTOP-KMJ0VL7:~/Ubuntu$ rosrun ros_essentials_cpp listener.py
+/usr/bin/env: ‘python’: No such file or directory
+
+#Run this
+sudo apt install python-is-python3
+
+#list nodes
+rosnode list
+
+#list topics
+rosnode topics
+
+#Publish message on a topic (Using CMD line)
+rostopic pub -r <Number of Iterations> <ros topic> <message type> <message>
+rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist "linear:
+  x: 0.1
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0"
+
+#Sow ROS computation Graph
+rosrun rqt_graph rqt_graph
+
+#Turtle sim
+run node:   rosrun turtlesim turtlesim_node
+run teleop: rosrun turtlesim  turtle_teleop_key
+
+#ROS Topics
+list topics: rostopic list
+show topic:  rostopic echo <topic>  [rostopic echo /turtle1/cmd_vel]
+
+#ROS Messages
+show rosmsg variables: rosmsg show <msg> [rosmsg show turtlesim/Pose]
