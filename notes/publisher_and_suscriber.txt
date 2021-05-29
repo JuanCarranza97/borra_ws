@@ -1,0 +1,30 @@
+Practical tips to write a publisher ROS Topic
+#Create a publishe
+1.- Determine the name of the topic
+2.- Determine type of the message
+3.- Determine the frequency (How many messages per second)
+    It depends on the application, how critical is the data
+4.- Create publisher object with parameters
+5.- Keep publishing the topic message at the selected frequency
+
+#Create a suscriber
+1.- Identify the name of the topic to listen to
+2.- Identify the type of the messages to be received
+3.- Define a callback function
+4.- Start listening for the topic messages
+5.- Spin to listen for ever (Only for C++)
+
+
+
+#
+Nodes: talker, listener
+Topic: chatter
+msg type: sdt_msgs/String
+ --------     std_msgs/String    ----------
+| Talker |  --- /chatter  --->  | Listener |
+ --------                        ----------
+
+#Python Talker 
+borra_ws/src/beginner_tutorials/src/scripts/talker.py
+#Python Listener
+borra_ws/src/beginner_tutorials/src/scripts/listener.py
