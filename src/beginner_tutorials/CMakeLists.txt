@@ -204,3 +204,9 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(talker_ros_node src/talker.cpp)
+target_link_libraries(talker_ros_node ${catkin_LIBRARIES})
+
+add_executable(listener_ros_node src/listener.cpp)
+target_link_libraries(listener_ros_node ${catkin_LIBRARIES})
