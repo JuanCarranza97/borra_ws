@@ -1,0 +1,74 @@
+
+jcarranz@DESKTOP-KMJ0VL7:~/Ubuntu/ros/borra_ws$ git status -u
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/beginner_tutorials/CMakeLists.txt
+        modified:   src/beginner_tutorials/package.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .catkin_workspace
+        notes/.create_message.txt.swp
+        src/beginner_tutorials/msg/IoTSensor.msg
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+1.- Create .msg file inside <package>/msg/<message_name>.msg
+    src/beginner_tutorials/msg/IoTSensor.msg
+2.- [CMakeLists.txt] Add message generation dependecies
+    @@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
+       roscpp
+       rospy
+       std_msgs
+    +  message_generation
+     )
+    
+     ## System dependencies are found with CMake's conventions
+3.- [CMakeLists.txt] Add message files to be created 
+    @@ -47,11 +48,10 @@ find_package(catkin REQUIRED COMPONENTS
+     ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
+    
+     ## Generate messages in the 'msg' folder
+    -# add_message_files(
+    -#   FILES
+    -#   Message1.msg
+    -#   Message2.msg
+    -# )
+    +add_message_files(
+    +  FILES
+    +  IoTSensor.msg
+    +)
+    
+     ## Generate services in the 'srv' folder
+     # add_service_files(
+4.- Add build and exec dependencies
+    --- a/src/beginner_tutorials/package.xml
+    +++ b/src/beginner_tutorials/package.xml
+    @@ -52,12 +52,14 @@
+       <build_depend>roscpp</build_depend>
+       <build_depend>rospy</build_depend>
+       <build_depend>std_msgs</build_depend>
+    +  <build_depend>message_generation</build_depend>
+       <build_export_depend>roscpp</build_export_depend>
+       <build_export_depend>rospy</build_export_depend>
+       <build_export_depend>std_msgs</build_export_depend>
+       <exec_depend>roscpp</exec_depend>
+       <exec_depend>rospy</exec_depend>
+       <exec_depend>std_msgs</exec_depend>
+    +  <exec_depend>message_runtime</exec_depend>
+    
+    
+       <!-- The export tag contains other, unspecified, tags -->    
+5.- Run catkin_make
+6.- Verify message was created correctly
+    jcarranz@DESKTOP-KMJ0VL7:~/Ubuntu/ros/borra_ws$ rosmsg show beginner_tutorials/IoTSensor
+        int32 id
+        string name
+        float32 temperature
+        float32 humidity
+
