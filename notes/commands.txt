@@ -38,3 +38,17 @@ show topic:  rostopic echo <topic>  [rostopic echo /turtle1/cmd_vel]
 
 #ROS Messages
 show rosmsg variables: rosmsg show <msg> [rosmsg show turtlesim/Pose]
+
+#ROS Services
+show services: rosservice list
+get service information: rosservice info <service> [/spawn]
+show service args: rossrv indo <type> [turtlesim/Spawn]
+rossrv info turtlesim/Spawn
+    float32 x
+    float32 y
+    float32 theta
+    string name
+    ---
+    string name
+call service: rosservice call <service> --args--
+    rosservice call /spawn 7 7 0 turtle2
