@@ -99,3 +99,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
         float32 temperature
         float32 humidity
 
+
+#Python listener and talker
+borra_ws/src/beginner_tutorials/src/scripts/iot_talker.py
+borra_ws/src/beginner_tutorials/src/scripts/iot_listener.py
+
+#C++ listener and talker
+borra_ws/src/beginner_tutorials/src/iot_talker.cpp
+borra_ws/src/beginner_tutorials/src/iot_listener.cpp
