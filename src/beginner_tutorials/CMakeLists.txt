@@ -222,3 +222,7 @@ target_link_libraries(iot_talker ${catkin_LIBRARIES})
 
 add_executable(iot_listener src/iot_listener.cpp)
 target_link_libraries(iot_listener ${catkin_LIBRARIES})
+
+add_executable(get_full_name_server src/get_full_name_server.cpp)
+target_link_libraries(get_full_name_server ${catkin_LIBRARIES})
+add_dependencies(get_full_name_server beginner_tutorials_gencpp)
