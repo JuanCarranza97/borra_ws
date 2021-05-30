@@ -1,0 +1,35 @@
+Steps to create a Client/Server ROS service App
+
+1.- Define service message (service file)
+2.- Create ROS server node
+3.- Create ROS client node
+4.- Execute service 
+5.- Consume the service by the client
+
+1.- Define service message
+    +++ b/src/beginner_tutorials/srv/AddTwoInts.srv
+    @@ -0,0 +1,4 @@
+    +int64 a
+    +int64 b
+    +---
+    +int64 sum
+
+2.- Add service generation 
+    +++ b/src/beginner_tutorials/CMakeLists.txt
+    @@ -54,11 +54,10 @@ add_message_files(
+     )
+    
+     ## Generate services in the 'srv' folder
+    -# add_service_files(
+    -#   FILES
+    -#   Service1.srv
+    -#   Service2.srv
+    -# )
+    +add_service_files(
+    +  FILES
+    +  AddTwoInts.srv
+    +)
+
+3.- catkin_make to create files
+
+
