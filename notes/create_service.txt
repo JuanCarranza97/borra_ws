@@ -40,3 +40,11 @@ Steps to create a Client/Server ROS service App
     - Files added borra_ws/devel/include/beginner_tutorials$ ls
         AddTwoInts.h         AddTwoIntsResponse.h  GetFullNameRequest.h   IoTSensor.h
         AddTwoIntsRequest.h  GetFullName.h         GetFullNameResponse.h
+5.- It is possible to call service by itself
+    #Initialize server
+    rosrun beginner_tutorials add_server.py
+
+    #Using rosservice command
+    rosservice call /add_two_ints 11 3
+    #Using python client script
+    rosrun  beginner_tutorials add_client.py 12 45
