@@ -52,3 +52,4 @@ rossrv info turtlesim/Spawn
     string name
 call service: rosservice call <service> --args--
     rosservice call /spawn 7 7 0 turtle2
+show service types: rossrv show beginner_tutorials/AddTwoInts
