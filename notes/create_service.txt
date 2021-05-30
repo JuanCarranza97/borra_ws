@@ -29,7 +29,14 @@ Steps to create a Client/Server ROS service App
     +  FILES
     +  AddTwoInts.srv
     +)
-
 3.- catkin_make to create files
+4.- Verify service was created correctly
+    -rossrv show beginner_tutorials/AddTwoInts
+        int64 a
+        int64 b
+        ---
+        int64 sum
 
-
+    - Files added borra_ws/devel/include/beginner_tutorials$ ls
+        AddTwoInts.h         AddTwoIntsResponse.h  GetFullNameRequest.h   IoTSensor.h
+        AddTwoIntsRequest.h  GetFullName.h         GetFullNameResponse.h
